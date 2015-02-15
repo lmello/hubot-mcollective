@@ -62,7 +62,7 @@ module.exports = (robot) ->
     target_envs = msg.match[1]
     console.log("target_envs = #{target_envs}")
 
-    ssh_string = "#{mco_base_cmd} puppet -v -j runall 10 -I #{target_envs}'"
+    ssh_string = "#{mco_base_cmd} puppet -v -j runonce -I #{target_envs}'"
     console.log ("#{ssh_string}")
     results = ""
     ssh_exec ssh_string, (output) ->
