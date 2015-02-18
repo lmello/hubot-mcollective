@@ -1,0 +1,31 @@
+#example minimal request hash
+mcommand_minimal = 
+  request: 
+    user: "lmello"
+    room: "puppet@conference.example.com"
+  agent: 
+    name: "ping"
+  filters:
+    class: [ 
+      "puppetdb::master"
+    ]
+mcommand_complete =
+  request:
+    user: "lmello"
+    room: "puppet@conference.example.com"
+  mco_config: "/home/mcouser/.mcollective/client_BR.cfg"
+  agent: 
+    name: "puppet"
+    action: "status"
+    options: "--no-noop"
+  filters:
+    class: [ 
+      "apache"
+      "php"
+    ]
+    fact: 
+      environment: "dev"
+      app: "Dummyapplication"
+      osfamily: "RedHat"
+    
+
